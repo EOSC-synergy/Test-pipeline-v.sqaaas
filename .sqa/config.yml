@@ -1,0 +1,19 @@
+config:
+  credentials: []
+  project_repos:
+    github.com/EOSC-synergy/sqaaas-tooling:
+      branch: release/1.7.13
+      repo: https://github.com/EOSC-synergy/sqaaas-tooling
+    github.com/ai4os-hub/DEEP-OC-federated-server:
+      branch: test_jenkins
+      repo: https://github.com/ai4os-hub/DEEP-OC-federated-server
+environment:
+  JPL_DOCKERFORCEBUILD: enabled
+sqa_criteria:
+  QC.Sty:
+    repos:
+      github.com/ai4os-hub/DEEP-OC-federated-server commands:
+        commands:
+        - /usr/bin/env sh .sqa/script.woolly-salmon-bonobo.sh
+        container: qc.sty_paltry-smalt-anteater
+timeout: 5400
